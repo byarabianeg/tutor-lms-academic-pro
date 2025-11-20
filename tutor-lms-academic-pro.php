@@ -56,13 +56,15 @@ function tlap_init_plugin() {
     require_once TLAP_PLUGIN_PATH . 'includes/class-registration.php';
     require_once TLAP_PLUGIN_PATH . 'includes/class-course-meta.php';
     require_once TLAP_PLUGIN_PATH . 'includes/class-filters.php';
-    
+    require_once TLAP_PLUGIN_PATH . 'includes/class-settings.php';
+
     // تهيئة المكونات
     new TLAP_Taxonomy();
     new TLAP_Admin();
     new TLAP_Registration();
     new TLAP_Course_Meta();
     new TLAP_Filters();
+    new TLAP_Settings();
     
     // تحميل النص
     load_plugin_textdomain('tutor-lms-academic-pro', false, dirname(plugin_basename(__FILE__)) . '/languages');
