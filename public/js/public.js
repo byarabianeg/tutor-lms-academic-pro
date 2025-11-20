@@ -29,6 +29,7 @@ jQuery(document).ready(function($) {
         if (universityId) {
             // إظهار تحميل
             facultySelect.prop('disabled', true);
+            facultySelect.html('<option value="">جاري التحميل...</option>');
             
             $.ajax({
                 url: tlap_ajax.ajax_url,
@@ -41,11 +42,18 @@ jQuery(document).ready(function($) {
                 success: function(response) {
                     facultySelect.prop('disabled', false);
                     
-                    if (response.success) {
+                    if (response.success && response.data.length > 0) {
+                        facultySelect.html('<option value="">اختر الكلية</option>');
                         $.each(response.data, function(index, faculty) {
                             facultySelect.append('<option value="' + faculty.term_id + '">' + faculty.name + '</option>');
                         });
+                    } else {
+                        facultySelect.html('<option value="">لا توجد كليات متاحة</option>');
                     }
+                },
+                error: function() {
+                    facultySelect.prop('disabled', false);
+                    facultySelect.html('<option value="">خطأ في التحميل</option>');
                 }
             });
         }
@@ -62,6 +70,7 @@ jQuery(document).ready(function($) {
         if (facultyId) {
             // إظهار تحميل
             departmentSelect.prop('disabled', true);
+            departmentSelect.html('<option value="">جاري التحميل...</option>');
             
             $.ajax({
                 url: tlap_ajax.ajax_url,
@@ -74,13 +83,24 @@ jQuery(document).ready(function($) {
                 success: function(response) {
                     departmentSelect.prop('disabled', false);
                     
-                    if (response.success) {
+                    if (response.success && response.data.length > 0) {
+                        departmentSelect.html('<option value="">اختر القسم</option>');
                         $.each(response.data, function(index, department) {
                             departmentSelect.append('<option value="' + department.term_id + '">' + department.name + '</option>');
                         });
+                    } else {
+                        departmentSelect.html('<option value="">لا توجد أقسام متاحة</option>');
                     }
+                },
+                error: function() {
+                    departmentSelect.prop('disabled', false);
+                    departmentSelect.html('<option value="">خطأ في التحميل</option>');
                 }
             });
         }
     });
+    
+    // إضافة فئات Tutor LMS للحقول
+    $('.tlap-registration-section .tutor-form-group select').addClass('tutor-form-control');
+    $('.tlap-registration-section .tutor-form-group input[type="text"]').addClass('tutor-form-control');
 });

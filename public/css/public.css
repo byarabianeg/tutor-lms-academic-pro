@@ -1,26 +1,29 @@
 /* قسم التصنيف الأكاديمي في التسجيل */
 .tlap-registration-section {
     background: #f9f9f9;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     border: 1px solid #e5e5e5;
-    margin: 20px 0;
+    margin: 25px 0;
+    border-left: 4px solid #2271b1;
 }
 
-.tlap-registration-section h3 {
+.tlap-section-title {
     color: #2271b1;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 18px;
+    font-weight: 600;
 }
 
-.tlap-registration-section p {
-    margin-bottom: 15px;
+.tlap-section-description {
+    margin-bottom: 20px;
     color: #666;
+    font-size: 14px;
 }
 
 /* مجموعة أزرار الراديو */
 .tlap-type-selector {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .tlap-radio-group {
@@ -39,12 +42,13 @@
     cursor: pointer;
     transition: all 0.3s ease;
     flex: 1;
-    min-width: 120px;
+    min-width: 140px;
     justify-content: center;
 }
 
 .tlap-radio-label:hover {
     border-color: #2271b1;
+    background: #f8fbff;
 }
 
 .tlap-radio-label input[type="radio"] {
@@ -54,19 +58,17 @@
 .tlap-radio-text {
     font-weight: 500;
     color: #333;
+    font-size: 14px;
 }
 
 .tlap-radio-label input[type="radio"]:checked + .tlap-radio-text {
     color: #2271b1;
 }
 
-.tlap-radio-label input[type="radio"]:checked ~ .tlap-radio-text {
-    color: #2271b1;
-}
-
 .tlap-radio-label:has(input[type="radio"]:checked) {
     border-color: #2271b1;
     background: #f0f7ff;
+    box-shadow: 0 2px 4px rgba(34, 113, 177, 0.1);
 }
 
 /* حاويات الحقول */
@@ -80,26 +82,28 @@
 }
 
 .tlap-fields-container .tutor-form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .tlap-fields-container label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 600;
     color: #333;
+    font-size: 14px;
 }
 
-.tlap-fields-container select {
+.tlap-fields-container select.tutor-form-control {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background: #fff;
     font-size: 14px;
+    height: auto;
 }
 
-.tlap-fields-container select:focus {
+.tlap-fields-container select.tutor-form-control:focus {
     border-color: #2271b1;
     outline: none;
     box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.2);
@@ -113,6 +117,20 @@
     border: 1px solid #bee5eb;
     border-radius: 4px;
     color: #0c5460;
+    font-size: 14px;
+}
+
+.tlap-general-fields .tutor-alert p {
+    margin: 0;
+}
+
+/* تحسينات التوافق مع Tutor LMS */
+.tutor-form-row .tlap-registration-section {
+    grid-column: 1 / -1;
+}
+
+.tutor-registration-form .tlap-registration-section {
+    margin: 20px 0;
 }
 
 /* التجاوب مع الشاشات الصغيرة */
@@ -127,22 +145,34 @@
     }
     
     .tlap-registration-section {
-        padding: 15px;
+        padding: 20px 15px;
+        margin: 20px 0;
     }
     
     .tlap-fields-container {
         padding: 15px;
     }
+    
+    .tlap-section-title {
+        font-size: 16px;
+    }
 }
 
-/* تحسينات Tutor LMS */
-.tutor-form-group .tlap-registration-section {
-    border: none;
-    background: transparent;
-    padding: 0;
+/* تحسينات إضافية للتكامل مع Tutor LMS */
+.tutor-form-group.tlap-registration-section {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 25px;
+    margin: 25px 0;
 }
 
-.tutor-form-group .tlap-registration-section h3 {
-    font-size: 16px;
+.tutor-form-group.tlap-registration-section h3 {
+    color: #2271b1;
     margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.tutor-form-group.tlap-registration-section p {
+    color: #666;
+    margin-bottom: 20px;
 }
