@@ -1,0 +1,148 @@
+/* قسم التصنيف الأكاديمي في التسجيل */
+.tlap-registration-section {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e5e5e5;
+    margin: 20px 0;
+}
+
+.tlap-registration-section h3 {
+    color: #2271b1;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.tlap-registration-section p {
+    margin-bottom: 15px;
+    color: #666;
+}
+
+/* مجموعة أزرار الراديو */
+.tlap-type-selector {
+    margin-bottom: 20px;
+}
+
+.tlap-radio-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.tlap-radio-label {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    background: #fff;
+    border: 2px solid #e5e5e5;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+    justify-content: center;
+}
+
+.tlap-radio-label:hover {
+    border-color: #2271b1;
+}
+
+.tlap-radio-label input[type="radio"] {
+    margin: 0 8px 0 0;
+}
+
+.tlap-radio-text {
+    font-weight: 500;
+    color: #333;
+}
+
+.tlap-radio-label input[type="radio"]:checked + .tlap-radio-text {
+    color: #2271b1;
+}
+
+.tlap-radio-label input[type="radio"]:checked ~ .tlap-radio-text {
+    color: #2271b1;
+}
+
+.tlap-radio-label:has(input[type="radio"]:checked) {
+    border-color: #2271b1;
+    background: #f0f7ff;
+}
+
+/* حاويات الحقول */
+.tlap-fields-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px;
+    border-left: 4px solid #2271b1;
+}
+
+.tlap-fields-container .tutor-form-group {
+    margin-bottom: 15px;
+}
+
+.tlap-fields-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.tlap-fields-container select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.tlap-fields-container select:focus {
+    border-color: #2271b1;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.2);
+}
+
+/* رسالة الكورسات العامة */
+.tlap-general-fields .tutor-alert {
+    margin: 0;
+    padding: 15px;
+    background: #d1ecf1;
+    border: 1px solid #bee5eb;
+    border-radius: 4px;
+    color: #0c5460;
+}
+
+/* التجاوب مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+    .tlap-radio-group {
+        flex-direction: column;
+    }
+    
+    .tlap-radio-label {
+        min-width: auto;
+        justify-content: flex-start;
+    }
+    
+    .tlap-registration-section {
+        padding: 15px;
+    }
+    
+    .tlap-fields-container {
+        padding: 15px;
+    }
+}
+
+/* تحسينات Tutor LMS */
+.tutor-form-group .tlap-registration-section {
+    border: none;
+    background: transparent;
+    padding: 0;
+}
+
+.tutor-form-group .tlap-registration-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}

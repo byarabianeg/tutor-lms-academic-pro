@@ -1,0 +1,136 @@
+/* تنسيقات عامة للإضافة */
+.tlap-admin-wrap {
+    max-width: 1200px;
+}
+
+.tlap-admin-wrap h1 {
+    color: #2271b1;
+    margin-bottom: 20px;
+}
+
+/* تبويبات التنقل */
+.tlap-admin-wrap .nav-tab-wrapper {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tlap-admin-wrap .nav-tab {
+    font-size: 14px;
+    padding: 8px 15px;
+    margin: 0 5px 0 0;
+    background: #f1f1f1;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    text-decoration: none;
+}
+
+.tlap-admin-wrap .nav-tab-active {
+    background: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+/* محتوى التبويبات */
+.tlap-tab-content {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tlap-tab-panel h2 {
+    color: #2271b1;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 10px;
+}
+
+/* شبكة الأعمدة */
+.tlap-admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tlap-admin-column {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.tlap-admin-column h3 {
+    color: #2271b1;
+    margin-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+/* قائمة التصنيفات */
+.tlap-term-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.tlap-term-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tlap-term-list li:last-child {
+    border-bottom: none;
+}
+
+.tlap-term-actions a {
+    text-decoration: none;
+    color: #2271b1;
+    font-size: 12px;
+}
+
+.tlap-term-actions a:hover {
+    text-decoration: underline;
+}
+
+/* الأزرار */
+.tlap-admin-wrap .button {
+    margin-top: 10px;
+}
+
+/* تنسيقات مربع المحتوى في تحرير الكورس */
+#tlap-course-meta .inside {
+    padding: 0;
+    margin: 0;
+}
+
+.tlap-course-meta {
+    padding: 12px;
+}
+
+.tlap-course-meta .tutor-form-group {
+    margin-bottom: 15px;
+}
+
+.tlap-course-meta label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.tlap-course-meta select,
+.tlap-course-meta input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.tlap-fields-container {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border-left: 4px solid #2271b1;
+}
