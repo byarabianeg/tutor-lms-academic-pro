@@ -90,7 +90,7 @@ class TLAP_Filters {
     }
     
     public function check_user_access() {
-        if (is_singular('courses') && is_user_logged_in())) {
+        if (is_singular('courses') && is_user_logged_in()) {
             global $post;
             $user_id = get_current_user_id();
             $academic_type = get_user_meta($user_id, 'tlap_academic_type', true);

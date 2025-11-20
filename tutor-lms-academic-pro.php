@@ -25,16 +25,24 @@ define('TLAP_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('TLAP_PLUGIN_VERSION', '1.0.0');
 
 // التحقق من وجود Tutor LMS
-register_activation_hook(__FILE__, 'tlap_check_tutor_lms');
 function tlap_check_tutor_lms() {
     if (!is_plugin_active('tutor/tutor.php') && !is_plugin_active('tutor-pro/tutor-pro.php')) {
         deactivate_plugins(plugin_basename(__FILE__));
         wp_die('هذه الإضافة تتطلب تفعيل إضافة Tutor LMS. الرجاء تثبيت وتفعيل Tutor LMS أولاً.');
     }
 }
+register_activation_hook(__FILE__, 'tlap_check_tutor_lms');
+
+// رسالة تنبيه عند عدم وجود Tutor LMS
+function tlap_tutor_missing_notice() {
+    ?>
+    <div class="notice notice-error">
+        <p><strong>Tutor LMS Academic Pro:</strong> هذه الإضافة تتطلب تفعيل إضافة Tutor LMS.</p>
+    </div>
+    <?php
+}
 
 // تحميل ملفات الإضافة
-add_action('plugins_loaded', 'tlap_init_plugin');
 function tlap_init_plugin() {
     // التحقق من وجود Tutor LMS
     if (!function_exists('tutor')) {
@@ -59,20 +67,12 @@ function tlap_init_plugin() {
     // تحميل النص
     load_plugin_textdomain('tutor-lms-academic-pro', false, dirname(plugin_basename(__FILE__)) . '/languages');
 }
-
-// رسالة تنبيه عند عدم وجود Tutor LMS
-function tlap_tutor_missing_notice() {
-    ?>
-    <div class="notice notice-error">
-        <p><strong>Tutor LMS Academic Pro:</strong> هذه الإضافة تتطلب تفعيل إضافة Tutor LMS.</p>
-    </div>
-    <?php
-}
+add_action('plugins_loaded', 'tlap_init_plugin');
 
 // إضافة رابط إعدادات في صفحة الإضافات
-add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'tlap_add_settings_link');
 function tlap_add_settings_link($links) {
     $settings_link = '<a href="admin.php?page=tutor-academic-pro">الإعدادات</a>';
     array_unshift($links, $settings_link);
     return $links;
 }
+add_filter('plugin_action_links_' . plugin_basename(__FILE__), 'tlap_add_settings_link');
